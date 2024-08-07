@@ -8,18 +8,21 @@ import java.lang.Integer;
 public class main {
     public static void main(String[] args) {
     	
-    	  Scanner ler = new Scanner(System.in);
-    	  ArrayList<String> listaPalavras = new ArrayList<>();
+    	String nomeArquivo = "C:\\Users\\laboratorio\\Desktop\\aula\\palavra.txt";
+    	Scanner ler = new Scanner(System.in);
+    	ArrayList<String> listaPalavras = new ArrayList<>();
         ArrayList<Integer> vetor = new ArrayList<>();
 
-        System.out.println("Quantas palavras quer gerar? ");
+        System.out.println("Quantas palavras quer gerar ? ");
         int quantidade = ler.nextInt();
+        System.out.println("qual o tamanho das palavras ? ");
+        int tamanho = ler.nextInt();
         
-        Util.gerarPalavraLista(listaPalavras,10,8);
-        Util.exibir(listaPalavras,"LISTA DE PALAVRAS:");
+        Util.gerarPalavrasArquivos(nomeArquivo,quantidade,tamanho);
+        //Util.gerarPalavraLista(listaPalavras,quantidade,tamanho);
+        //Util.exibir(listaPalavras,"LISTA DE PALAVRAS:");
         
-        popular(vetor, quantidade);
-        exibir(vetor);
+        
     }
 
     public static void popular(ArrayList<Integer> v, int n) {
