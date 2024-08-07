@@ -2,6 +2,9 @@ package Aula;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Util {
 	
@@ -46,4 +49,20 @@ public class Util {
 			System.out.println(item);
 		}
 	}
+	/**
+	 * metodo para exibir a lista de palavras geradas
+	 * @param caminho = o nome ou diretorio de onde ficara armazenado as palavras
+	 * @param quantidade = quantidade de palavras geradas
+	 * @param tamanho = tamanho das palavras geradas
+	*/
+	public static void gerarPalavrasArquivos(String caminho, int quantidade, int tamanho) {      
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(caminho))) {
+            for (int i = 0;i < quantidade;i++) {
+            	writer.write(Util.gerarPalavra(tamanho)+"\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+	
 }
