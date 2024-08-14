@@ -1,5 +1,3 @@
-package Aula;
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.BufferedWriter;
@@ -46,8 +44,9 @@ public class Util {
 	public static void exibir(ArrayList<String> lista, String frase) {
 		System.out.println(frase);
 		for(Object item:lista) {
-			System.out.println(item);
+			System.out.print(item+"\t");
 		}
+        System.out.println("\n");
 	}
 	/**
 	 * metodo para exibir a lista de palavras geradas
