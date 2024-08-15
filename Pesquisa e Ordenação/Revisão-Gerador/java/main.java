@@ -1,3 +1,5 @@
+package Testes;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,37 +11,19 @@ public class Main {
     	String nomeArquivo = "C:\\Users\\laboratorio\\Desktop\\aula\\palavra.txt";
     	Scanner ler = new Scanner(System.in);
     	ArrayList<String> listaPalavras = new ArrayList<>();
-        //ArrayList<Integer> vetor = new ArrayList<>();
+        ArrayList<Integer> vetor = new ArrayList<>();
+        ArrayList<Alunos> listaObj = new ArrayList<>();
 
-        System.out.println("Quantas palavras quer gerar ? ");
+        System.out.println("Quantos alunos deseja gerar ?");
         int quantidade = ler.nextInt();
-        System.out.println("qual o tamanho das palavras ? ");
-        int tamanho = ler.nextInt();
         
-       //popular(vetor, tamanho);
-        //exibir(vetor);
-        //Ordenacao.bolhaInteiros(vetor);
-        //exibir(vetor);
-        //System.out.println("Feitooooo...100");
-        Util.gerarPalavrasArquivos(nomeArquivo,quantidade,tamanho);
-        Util.gerarPalavraLista(listaPalavras,quantidade,tamanho);
-        Util.exibir(listaPalavras,"LISTA DE PALAVRAS:");
-        Ordenacao.bolhaPalavras(listaPalavras);
-        Util.exibir(listaPalavras, "LISTA DE PALAVRAS ORDENADAS");
+        Util.gerarAlunos(listaObj, quantidade);
+        Util.exibirAlunos(listaObj);
+        System.out.println("================================================");
+        Ordenacao.bolhaObjeto(listaObj);
+        Util.exibirAlunos(listaObj);
         
     }
 
-    public static void popular(ArrayList<Integer> v, int n) {
-        Random gerador = new Random();
-        for (int i = 0; i < n; i++) {
-            v.add(gerador.nextInt(100));
-        }
-    }
-
-    public static void exibir(ArrayList<Integer> v) {
-        for (int i = 0; i < v.size(); i++) {
-            System.out.print(v.get(i)+"\t");
-        }
-        System.out.println("\n");
-    }
+	
 }
