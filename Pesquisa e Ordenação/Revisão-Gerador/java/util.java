@@ -1,3 +1,5 @@
+package Testes;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.BufferedWriter;
@@ -49,7 +51,7 @@ public class Util {
         System.out.println("\n");
 	}
 	/**
-	 * metodo para exibir a lista de palavras geradas
+	 * Metodo para gerar palavras em um arquivo
 	 * @param caminho = o nome ou diretorio de onde ficara armazenado as palavras
 	 * @param quantidade = quantidade de palavras geradas
 	 * @param tamanho = tamanho das palavras geradas
@@ -64,4 +66,40 @@ public class Util {
         }
     }
 	
+	public static void popular(ArrayList<Integer> v, int n) {
+        Random gerador = new Random();
+        for (int i = 0; i < n; i++) {
+            v.add(gerador.nextInt(100));
+        }
+    }
+
+    public static void exibir(ArrayList<Integer> v) {
+        for (int i = 0; i < v.size(); i++) {
+            System.out.print(v.get(i)+"\t");
+        }
+        System.out.println("\n");
+    }
+
+    public static void gerarAlunos(ArrayList<Alunos> lista,int quantidade) {
+		
+    	Random gerador = new Random();
+		for(int i = 0;i<quantidade;i++) {
+			
+			String nomes = Util.gerarPalavra(5);;
+			int idade = gerador.nextInt(22);
+			int matricula = gerador.nextInt(100000);
+			
+			Alunos aluno = new Alunos(nomes,idade,matricula);
+			
+			lista.add(aluno);
+		}
+		
+	}
+	
+    public static void exibirAlunos(ArrayList<Alunos> lista) {
+        for (Alunos aluno : lista) {
+            System.out.print(aluno.toString()+"\t");
+        }
+    }
+    
 }
