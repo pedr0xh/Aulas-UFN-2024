@@ -1,12 +1,10 @@
-package Testes;
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Util {
+public class util {
 	
 	static StringBuilder letras = new StringBuilder("abcdefghijklmnopqrstuvwxyz ");
 	
@@ -65,7 +63,12 @@ public class Util {
             e.printStackTrace();
         }
     }
-	
+
+	/**
+	 * Metodo para gerar numeros para a lista
+	 * @param v = lista de inteiros
+	 * * @param n = tamanho da lista
+	 * 	*/
 	public static void popular(ArrayList<Integer> v, int n) {
         Random gerador = new Random();
         for (int i = 0; i < n; i++) {
@@ -73,6 +76,10 @@ public class Util {
         }
     }
 
+	/**
+	 * Metodo para mostrar os numeros da lista de inteiros
+	 * @param v = lista de inteiros
+	 * 	*/
     public static void exibir(ArrayList<Integer> v) {
         for (int i = 0; i < v.size(); i++) {
             System.out.print(v.get(i)+"\t");
@@ -80,12 +87,17 @@ public class Util {
         System.out.println("\n");
     }
 
+	/**
+	 * Metodo para gerar alunos para a lista
+	 * @param lista = lista de alunos
+	 * * @param quantidade = quantidade de alunos a ser gerados
+	 * 	*/
     public static void gerarAlunos(ArrayList<Alunos> lista,int quantidade) {
 		
     	Random gerador = new Random();
 		for(int i = 0;i<quantidade;i++) {
 			
-			String nomes = Util.gerarPalavra(5);;
+			String nomes = util.gerarPalavra(5);;
 			int idade = gerador.nextInt(22);
 			int matricula = gerador.nextInt(100000);
 			
@@ -96,6 +108,10 @@ public class Util {
 		
 	}
 	
+	/**
+	 * Metodo para mostrar os alunos da lista
+	 * @param lista = lista de alunos
+	 * 	*/
     public static void exibirAlunos(ArrayList<Alunos> lista) {
         for (Alunos aluno : lista) {
             System.out.print(aluno.toString()+"\t");
