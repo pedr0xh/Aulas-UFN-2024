@@ -1,11 +1,9 @@
-package Testes;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 import java.lang.Integer;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
     	
     	String nomeArquivo = "C:\\Users\\laboratorio\\Desktop\\aula\\palavra.txt";
@@ -17,11 +15,11 @@ public class Main {
         System.out.println("Quantos alunos deseja gerar ?");
         int quantidade = ler.nextInt();
         
-        Util.gerarAlunos(listaObj, quantidade);
-        Util.exibirAlunos(listaObj);
+        util.gerarAlunos(listaObj, quantidade);
+        util.exibirAlunos(listaObj);
         System.out.println("================================================");
         Ordenacao.bolhaObjeto(listaObj);
-        Util.exibirAlunos(listaObj);
+        util.exibirAlunos(listaObj);
         
     }
 
