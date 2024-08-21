@@ -1,5 +1,3 @@
-package Testes;
-
 import java.util.ArrayList;
 
 public class Ordenacao {
@@ -72,5 +70,27 @@ public class Ordenacao {
             }
         }
     }
+
+    public static void selecao(ArrayList<Integer> lista) {
+    
+        int posMenor, i, j;
+        int tmp;
+    
+        for (i = 0; i < lista.size()-1; i++) {
+            posMenor = i;
+            for (j = i + 1; j < lista.size(); j++ ) {
+                if (lista.get(j) < lista.get(posMenor)) {
+                    posMenor = j;
+                }
+            }
+            if (i != posMenor) { 
+                tmp = lista.get(i);
+                lista.set(i, lista.get(posMenor));
+                lista.set(posMenor, tmp);
+            }
+        }
+
+    }
+
 }       	
             
