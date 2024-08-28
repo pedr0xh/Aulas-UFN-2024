@@ -1,5 +1,3 @@
-package Testes;
-
 public class Alunos {
     
     private String nome;
@@ -33,10 +31,10 @@ public class Alunos {
 
     @Override
     public String toString() {
-        return "Aluno: " + nome + "\n" +
-               "Idade: " + idade + " anos\n" +
-               "Matrícula: " + matricula + "\n";
+    return String.format("Aluno: %s\nIdade: %d anos\nMatrícula: %s",nome, idade, matricula);
     }
+
+   
 
     
     
