@@ -4,9 +4,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class util {
+public class Util {
 	
-	static StringBuilder letras = new StringBuilder("abcdefghijklmnopqrstuvwxyz ");
+	static StringBuilder letras = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
 	
 	/**
 	 * Gerador de palavras aleatorias
@@ -97,7 +97,7 @@ public class util {
     	Random gerador = new Random();
 		for(int i = 0;i<quantidade;i++) {
 			
-			String nomes = util.gerarPalavra(5);;
+			String nomes = gerarPalavra(5);;
 			int idade = gerador.nextInt(22);
 			int matricula = gerador.nextInt(100000);
 			
@@ -113,9 +113,12 @@ public class util {
 	 * @param lista = lista de alunos
 	 * 	*/
     public static void exibirAlunos(ArrayList<Alunos> lista) {
-        for (Alunos aluno : lista) {
-            System.out.print(aluno.toString()+"\t");
-        }
-    }
+		System.out.println("Lista de Alunos:\n");
+		for (Alunos aluno : lista) {
+			System.out.println(aluno);
+			System.out.println("-------------------------------");
+		}
+	}
+	
     
 }
