@@ -2,7 +2,11 @@ import java.util.ArrayList;
 
 public class Ordenacao {
 
-    // Método para ordenação por bolha de inteiros
+    /**
+     * Ordena uma lista de inteiros usando o algoritmo de ordenação por bolha.
+     * 
+     * @param lista A lista de inteiros a ser ordenada.
+     */
     public static void bolhaInteiros(ArrayList<Integer> lista) {
         int aux;
         boolean troca;
@@ -25,7 +29,11 @@ public class Ordenacao {
         }
     }
 
-    // Método para ordenação por bolha de strings
+    /**
+     * Ordena uma lista de strings usando o algoritmo de ordenação por bolha.
+     * 
+     * @param lista A lista de strings a ser ordenada.
+     */
     public static void bolhaPalavras(ArrayList<String> lista) {
         String aux;
         boolean troca;
@@ -48,7 +56,12 @@ public class Ordenacao {
         }
     }
 
-    // Método para ordenação por bolha de objetos do tipo Alunos
+    /**
+     * Ordena uma lista de objetos do tipo `Alunos` usando o algoritmo de ordenação por bolha.
+     * A ordenação é realizada com base no nome dos alunos.
+     * 
+     * @param lista A lista de objetos `Alunos` a ser ordenada.
+     */
     public static void bolhaObjeto(ArrayList<Alunos> lista) {
         Alunos aux;
         boolean troca;
@@ -57,7 +70,6 @@ public class Ordenacao {
             troca = false;
 
             for (int j = 0; j < lista.size() - i - 1; j++) {
-                // Corrigido: Remove o parêntese extra na comparação
                 if (lista.get(j).getNome().compareTo(lista.get(j + 1).getNome()) > 0) {
                     troca = true;
                     aux = lista.get(j);
@@ -67,32 +79,59 @@ public class Ordenacao {
             }
 
             if (!troca) {
+                break;
             }
         }
     }
 
-    // public static void selecao(ArrayList<Alunos> lista) {
-    
-    //     int posMenor, i, j;
-    //     int tmp;
-    
-    //     for (i = 0; i < lista.size()-1; i++) {
-    //         posMenor = i;
-    //         for (j = i + 1; j < lista.size(); j++ ) {
-    //             if (lista.get(j).getNome().compareTo(lista.get(posMenor).getNome())) {
-    //                 posMenor = j;
-    //             }
-    //         }
-    //         if (i != posMenor) { 
-    //             tmp = lista.get(i);
-    //             lista.set(i, lista.get(posMenor));
-    //             lista.set(posMenor, tmp);
-    //         }
-    //     }
+    /**
+     * Ordena uma lista de objetos do tipo `Alunos` usando o algoritmo de ordenação por inserção.
+     * A ordenação é realizada com base no método `compareTo` dos objetos `Alunos`.
+     * 
+     * @param lista A lista de objetos `Alunos` a ser ordenada.
+     */
+    public static void insercaoObjeto(ArrayList<Alunos> lista) {
+        int i, j;
+        Alunos aux;
 
-    // }
+        for (i = 1; i < lista.size(); i++) {
+            aux = lista.get(i);
 
-    
+            for (j = i - 1; j >= 0 && lista.get(j).compareTo(aux) > 0; j--) {
+                lista.set(j + 1, lista.get(j));
+            }
 
-}       	
-            
+            lista.set(j + 1, aux);
+        }
+    }
+
+    /**
+     * Ordena uma lista de objetos do tipo `Alunos` usando o algoritmo de ordenação por seleção.
+     * A ordenação é realizada com base no método `compareTo` dos objetos `Alunos`.
+     * 
+     * @param lista A lista de objetos `Alunos` a ser ordenada.
+     */
+    public static void selecaoObjeto(ArrayList<Alunos> lista) {
+        int i, j, posMenor;
+        Alunos aux;
+        posMenor = 0;
+        
+        for (i = 0; i < lista.size(); i++) {
+            posMenor = i;
+            for (j = i + 1; j < lista.size(); j++) {
+                // Verificação de debug
+                if (j >= lista.size()) {
+                    System.out.println("Índice j fora dos limites: " + j);
+                }
+                if (lista.get(j).compareTo(lista.get(posMenor)) < 0) {
+                    posMenor = j;
+                }
+            }
+            if (posMenor != i) {
+                aux = lista.get(i);
+                lista.set(i, lista.get(posMenor));
+                lista.set(posMenor, aux);
+            }
+        }
+    }
+}
