@@ -1,27 +1,66 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Random;
-import java.lang.Integer;
+public class Alunos implements Comparable<Alunos> {
 
-public class main {
-    public static void main(String[] args) {
-    	
-    	String nomeArquivo = "C:\\Users\\laboratorio\\Desktop\\aula\\palavra.txt";
-    	Scanner ler = new Scanner(System.in);
-    	ArrayList<String> listaPalavras = new ArrayList<>();
-        ArrayList<Integer> vetor = new ArrayList<>();
-        ArrayList<Alunos> listaObj = new ArrayList<>();
+    private String nome;
+    private int idade;
+    private int matricula;
 
-        System.out.println("Quantos alunos deseja gerar ?");
-        int quantidade = ler.nextInt();
-        
-        Util.gerarAlunos(listaObj, quantidade);
-        Util.exibirAlunos(listaObj);
-        System.out.println("================================================");
-        Ordenacao.bolhaObjeto(listaObj);
-        Util.exibirAlunos(listaObj);
-        
+    public Alunos(String nome, int idade, int matricula) {
+        this.nome = nome;
+        this.idade = idade;
+        this.matricula = matricula;
     }
 
-	
+    public int getIdade() {
+        return idade;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * Retorna uma representação em string dos detalhes do aluno.
+     * 
+     * @return String contendo o nome, idade e matrícula do aluno.
+     */
+    @Override
+    public String toString() {
+        return "Aluno: " + nome + "\n" +
+               "Idade: " + idade + " anos\n" +
+               "Matrícula: " + matricula + "\n";
+    }
+
+    /**
+     * Compara este aluno com outro aluno para ordenação.
+     * A comparação é feita primeiro pelo nome. Se os nomes forem iguais,
+     * a comparação é feita pela idade.
+     * 
+     * @param o Outro aluno a ser comparado.
+     * @return Um valor negativo, zero ou positivo conforme este aluno
+     *         é menor, igual ou maior que o outro aluno.
+     */
+    @Override
+    public int compareTo(Alunos o) {
+        int nomeComparison = this.nome.compareTo(o.nome);
+        if (nomeComparison != 0) {
+            return nomeComparison;
+        }
+        return Integer.compare(this.idade, o.idade);
+    }
 }
