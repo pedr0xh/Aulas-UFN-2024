@@ -8,16 +8,6 @@
 
 ---
 
-### Índice
-1. [Integrantes do Grupo](#integrantes-do-grupo)
-2. [Procedimento](#procedimento)
-3. [Progresso](#progresso)
-4. [Salvar Configurações](#salvar-configurações)
-5. [Imagens](#imagens)
-6. [Links Úteis](#links-úteis)
-
----
-
 ### Integrantes do Grupo
 - **Grupo 1:** Yuri Alexander, Eduardo Cerreta e Meani 
 - **Grupo 2:** Pedro, Miguel e Machado
