@@ -213,7 +213,6 @@ Algumas configurações de IP não permitem navegação externa.
 - **Gateway Padrão:** 172.25.2.193
 ---
 
----
 
 <h2 align="center">Links Úteis</h2>
 
