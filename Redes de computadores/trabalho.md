@@ -99,7 +99,7 @@
      sudo ufw allow 'Apache'
      ```
 
-   - Abrir o site criado: http://172.25.2.214/grupo2.html
+   - Abrir o site criado: http://172.25.2.214/grupo2
 
 5. **Configurar IPTABLES no Linux**
    - Instalação:
