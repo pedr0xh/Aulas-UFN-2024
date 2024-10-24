@@ -4,10 +4,6 @@
 
 ---
 
-### Resumo
-
----
-
 ### Integrantes do Grupo
 - **Grupo 1:** Yuri Alexander, Eduardo Cerreta e Meani 
 - **Grupo 2:** Pedro, Miguel e Machado
